@@ -54,4 +54,4 @@ def judge():
     return Response(status = 500)
 
 if __name__ == "__main__":
-    app.run(host = "localhost", port = 6969, debug=True)
+    app.run(host = "localhost", port = APPLICATION_PORT, debug=True)

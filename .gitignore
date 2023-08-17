@@ -1,0 +1,6 @@
+env
+.env
+text.txt
+output.html
+temp.py
+__pycache__

@@ -20,6 +20,7 @@ JOB_TIMEOUT = int(os.getenv('JOB_TIMEOUT'))
 NUM_QUEUES = int(os.getenv('NUM_QUEUES'))
 REDIS_HOST = os.getenv('REDIS_HOST')
 REDIS_PORT = int(os.getenv('REDIS_PORT'))
+APPLICATION_PORT = int(os.getenv('APPLICATION_PORT'))
 
 redis_conn = Redis(host=REDIS_HOST, port=REDIS_PORT)
 queues = [Queue( str(_),connection=redis_conn) for _ in range(NUM_QUEUES)]

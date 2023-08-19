@@ -17,7 +17,6 @@ redis==4.6.0
 Redis-Sentinel-Url==1.0.1
 requests==2.31.0
 rq==1.15.1
-rq-dashboard==0.6.1
 rq-dashboard-compatible==0.1
 six==1.16.0
 soupsieve==2.4.1

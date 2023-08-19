@@ -16,8 +16,12 @@ load_dotenv()
 SHARED_KEY = os.getenv('KEY')
 USERNAME = os.getenv('USERNAME').split(',')
 PASSWORD = os.getenv('PASSWORD').split(',')
+
+if len(USERNAME) != len(PASSWORD) or len(USERNAME) == 0:
+    raise SystemExit
+
+NUM_QUEUES = len(USERNAME)
 JOB_TIMEOUT = int(os.getenv('JOB_TIMEOUT'))
-NUM_QUEUES = int(os.getenv('NUM_QUEUES'))
 REDIS_HOST = os.getenv('REDIS_HOST')
 REDIS_PORT = int(os.getenv('REDIS_PORT'))
 APPLICATION_PORT = int(os.getenv('APPLICATION_PORT'))
@@ -45,7 +49,7 @@ def judge():
         USERNAME[queue_id],
         PASSWORD[queue_id],
         queue.name,
-        job_timeout = 15
+        job_timeout = JOB_TIMEOUT
     )
 
     if result:
